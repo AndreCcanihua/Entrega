@@ -1,0 +1,33 @@
+{% extends 'miapp/home.html' %}
+
+{% block titulo %}
+    <h1 class="mb-5">Villanos</h1>     
+{% endblock titulo %}
+    
+   
+{% block contenido %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Identidad Secreta</th>
+                <th>Contacto</th>
+                <th>Poderes</th>
+
+            </tr>
+        </thead>
+    <tbody>
+{% for v in villanos %}
+        <tr>
+            <td>{{ v.id}}</td>
+            <td>{{ v.nombre}}</td>
+            <td>{{ v.identidadSecreta}}</td>
+            <td>{{ v.emailContacto}}</td>
+            <td>{{ v.poderes}}</td>
+
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
